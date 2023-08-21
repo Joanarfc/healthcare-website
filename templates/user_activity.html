@@ -1,0 +1,108 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    My activity
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <h1>Add activity</h1>
+        <p>Register your fitness and health activity.</p>
+    </div>    
+    <div class="container myActivity">
+        <form method="post" action="{{url_for('activity')}}" novalidate>
+            <fieldset>
+                <legend>Personal Information</legend>
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <label for="age" class="form-label">Age:</label>
+                        <input type="number" class="form-control" placeholder="Enter your age" id="age" name="age" min="1" max="120" required value="{{ age }}">
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="gender">Gender:</label>
+                        <select id="gender" name="gender" required>
+                            <option value="">Select gender</option>
+                            <option value="male" {% if gender == 'male' %}selected{% endif %}>Male</option>
+                            <option value="female" {% if gender == 'female' %}selected{% endif %}>Female</option>
+                            <option value="other" {% if gender == 'other' %}selected{% endif %}>Other</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <label for="weight" class="form-label">Weight (kg):</label>
+                        <input type="number" class="form-control" id="weight" name="weight" placeholder="Enter your weight" min="0" step="0.01" required value="{{ weight }}">
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="height">Height (cm):</label>
+                        <input type="number" class="form-control" id="height" name="height" placeholder="Enter your height" min="0" required value="{{ height }}">
+                    </div>
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>Activity Information</legend>
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <label for="activityType">Activity Type:</label>
+                        <select id="activityType" name="activityType" required>
+                            <option value="">Select activity type</option>
+                            <option value="running" {% if activity_type == 'running' %}selected{% endif %}>Running</option>
+                            <option value="cycling" {% if activity_type == 'cycling' %}selected{% endif %}>Cycling</option>
+                            <option value="swimming" {% if activity_type == 'swimming' %}selected{% endif %}>Swimming</option>
+                            <option value="yoga" {% if activity_type == 'yoga' %}selected{% endif %}>Yoga</option>
+                            <option value="step" {% if activity_type == 'step' %}selected{% endif %}>Step</option>
+                            <option value="combat" {% if activity_type == 'combat' %}selected{% endif %}>Combat</option>
+                            <option value="bodybuilding" {% if activity_type == 'bodybuilding' %}selected{% endif %}>Bodybuilding</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="duration">Duration (minutes):</label>
+                        <input type="number" class="form-control" id="duration" name="duration" min="0" step="1" placeholder="Enter the duration (minutes)" required value="{{ duration }}">
+                    </div>
+
+                    <div class="form-group col-md-4">
+                        <label for="intensity">Intensity:</label>
+                        <select id="intensity" name="intensity" required>
+                            <option value="">Select intensity</option>
+                            <option value="low" {% if intensity == 'low' %}selected{% endif %}>Low</option>
+                            <option value="moderate" {% if intensity == 'moderate' %}selected{% endif %}>Moderate</option>
+                            <option value="high" {% if intensity == 'high' %}selected{% endif %}>High</option>
+                        </select>
+                    </div>
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>Heart Rate Data</legend>
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <label for="restingHeartRate">Resting Heart Rate (bpm):</label>
+                        <input type="number" class="form-control" id="restingHeartRate" name="restingHeartRate" placeholder="Enter resting heart rate" min="30" max="120" step="1" required value="{{ resting_heart_rate }}">
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="exerciseHeartRate">Exercise Heart Rate (bpm):</label>
+                        <input type="number" class="form-control" id="exerciseHeartRate" name="exerciseHeartRate" placeholder="Enter exercise heart rate"  min="50" max="220" step="1" required value="{{ exercise_heart_rate }}">
+                    </div>
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>Additional Metrics</legend>
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <label for="bodyFatPercentage">Body Fat Percentage (%):</label>
+                        <input type="number" class="form-control" id="bodyFatPercentage" name="bodyFatPercentage" placeholder="Enter body fat %" min="1" max="100" step="0.01" required value="{{ body_fat_percentage }}">
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="muscleMass">Muscle Mass (kg):</label>
+                        <input type="number" class="form-control" id="muscleMass" name="muscleMass" placeholder="Enter muscle mass" min="1" step="0.01" required value="{{ muscle_mass }}">
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="waterIntake">Water Intake (liters):</label>
+                        <input type="number" class="form-control" id="waterIntake" name="waterIntake" placeholder="Enter hydration level" min="1" step="0.01" required value="{{ water_intake }}">
+                    </div>
+                </div>
+            </fieldset>
+            <button type="submit" href="{{ url_for('activity') }}">Submit activity</button>
+        </form>
+    </div>
+
+{% endblock %}

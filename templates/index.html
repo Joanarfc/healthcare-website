@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Fitness website
+{% endblock %}
+
+{% block content %}
+    <div class="video-banner">
+        <video src="{{ url_for('static', filename='images/workout-banner.mp4') }}" autoplay loop muted></video>
+        <div class="overlay"></div>
+        <div class="banner-content">
+        <h1>Join our workout program</h1>
+        <p>Subscribe now for exclusive access to our fitness content</p>
+        <div class="buttons">
+            <a href="#" class="btn">Subscribe</a>
+            <a href="#" class="btn">Learn More</a>
+        </div>
+        </div>
+    </div>
+  {% endblock %}

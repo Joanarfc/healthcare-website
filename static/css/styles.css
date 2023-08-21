@@ -1,0 +1,970 @@
+/*--------------------------------------------------------------
+# General Page styling
+--------------------------------------------------------------*/
+body {
+  background-color: #f8f9fa;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+.container {
+  margin-top: 50px;
+}
+
+h1 {
+  color: #333;
+  font-size: 24px;
+}
+
+p {
+  color: #666;
+}
+
+button {
+  color: #ffffff;
+  text-transform: uppercase; /* Converts the text inside the button to uppercase */
+  background: #800080;
+  padding: 12px 16px;
+  margin-top: 2rem;
+  border: none;
+  border-radius: 4px; /* Gives the button slightly rounded corners */
+}
+
+button:hover {
+  background: #999999;
+}
+
+#company-title {
+  text-transform: uppercase;
+}
+
+.msgRetorno {
+  padding-top: 100px;
+}
+
+/*--------------------------------------------------------------
+# Error messages summary
+--------------------------------------------------------------*/
+.btn-dismiss {
+  background-color: grey;
+  color: white;
+  font-weight: bold;
+}
+
+/*--------------------------------------------------------------
+# Navbar section
+--------------------------------------------------------------*/
+.navbar {
+  margin-bottom: 20px;
+}
+
+.navbar-brand img {
+  max-height: 150px;
+}
+
+.nav-item:last-child {
+  margin-right: 0px;
+}
+
+.nav-item:last-child .nav-link {
+  margin-right: 0;
+}
+
+.navbar-custom .nav-link.home:hover {
+  background-color: grey;
+  color: white;
+}
+
+.navbar-custom .nav-link {
+  background-color: #f8f9fa;
+  color: 65, 65, 65;
+  font-family: sans-serif;
+  font-weight: bold;
+  transition: background-color 0.3s ease-in-out;
+  text-transform: uppercase;
+}
+
+.navbar-custom .nav-link:hover,
+.navbar-custom .nav-link.active {
+  background-color: grey;
+  color: white;
+}
+
+.navbar-custom .nav-link.active {
+  background-color:  #800080;
+  color: white;
+  font-weight: bold;
+  font-family: sans-serif;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.navbar-custom .nav-link.register-login {
+  background-color: #800080;
+  color: white;
+}
+
+.navbar-custom .nav-link.register-login:hover {
+  background-color: #4B0082;
+}
+
+.navbar-custom {
+  margin-top: 45px; /* Add some space between the navbar and social links */
+}
+
+.nav-greeting {
+  font-weight: bold;
+  color: grey;
+  padding: 8px 10px;
+}
+
+/* Reset the styles for .nav-greeting */
+.nav-greeting:hover,
+.nav-greeting:focus,
+.nav-greeting:active,
+.nav-greeting:visited {
+  background-color: transparent !important;
+  color: grey !important;
+  padding: 8px 10px !important;
+}
+
+/*--------------------------------------------------------------
+# Navbar social links
+--------------------------------------------------------------*/
+.social-icons {
+  display: inline-flex;
+  align-items: center;
+  margin-right: 20px; /* Adjust margin right for spacing */
+  position: relative
+}
+
+.social-icon {
+  color: #551054;
+  font-size: 15px;
+  margin-right: 10px;
+  margin-bottom: 0px;
+  background-color: #E6E6FA;
+  padding: 10px; /* Add padding to increase the clickable area */
+  border-radius: 50%; /* Make the social icons circular */
+  text-decoration: none; /* Remove the default underline on the links */
+  transition: background-color 0.3s ease-in-out; /* Add smooth transition */
+}
+
+.social-icon i {
+  padding: 2px;
+  border-radius: 50%;
+}
+
+.social-icon:hover {
+  background-color: #551054;
+  color: #ffffff;
+}
+
+.social-links-wrapper {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-radius: 4px;
+  margin-left: 40px;
+  border-radius: 10px;
+  justify-content: center;
+  z-index: 1031; /* Add a higher z-index to ensure it appears above the navbar */
+}
+
+.social-links-wrapper .container {
+  padding: 0;
+}
+
+/* Add a rectangle background using pseudo-elements */
+.social-icons::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: calc(100% + 20px);
+  height: calc(100% + 20px);
+  background-color: #800080;
+  border-radius: 4px;
+  z-index: -1; /* Send the pseudo-element to the background */
+}
+
+/* Add media query for small screens */
+@media (max-width: 992px) {
+  .social-links-wrapper {
+    margin: 10px; /* Add some margin to avoid overlap */
+  }
+}
+
+/*--------------------------------------------------------------
+# User icon
+--------------------------------------------------------------*/
+.user-icon-dropdown {
+  display: flex;
+  position: absolute;
+  right: 20px;
+  justify-content: flex-end;
+  align-items: center;
+  margin-right: 40px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Increase the size of the user icon */
+.user-icon-dropdown .fa-user-circle {
+  font-size: 40px;
+}
+
+.dropdown-item.active,
+.dropdown-item:focus {
+    background-color: #800080;
+}
+
+/* Add media query for small screens */
+@media (max-width: 768px) {
+  .user-icon-dropdown {
+      position: static;
+      margin-top: 30px;
+  }
+}
+
+/*--------------------------------------------------------------
+# User Registration
+--------------------------------------------------------------*/
+.user-Registration-form {
+  padding-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.user-Registration-form .form-group {
+  flex: 0 0 100%;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.user-Registration-form label {
+  flex-basis: 200px;
+  margin-right: 1rem;
+}
+
+.user-Registration-form .form-control {
+  flex: 1;
+  width: 60%;
+  height: 40px;
+}
+
+.user-Registration-form p {
+  text-align:left;
+  color: #800080;
+  margin-top: 20px;
+}
+
+.user-Registration-form fieldset {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 70%;
+}
+
+.user-Registration-form input.form-control:focus {
+  border-color: #800080;
+  outline: 2px solid #800080;
+  outline-width: 2px solid #800080;
+}
+
+/*--------------------------------------------------------------
+# User Login
+--------------------------------------------------------------*/
+.user-login-form {
+  padding-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.user-login-form .form-group {
+  flex: 0 0 100%;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.user-login-form label {
+  flex-basis: 200px;
+  margin-right: 1rem;
+}
+
+.user-login-form .form-control {
+  flex: 1;
+  width: 60%;
+  height: 40px;
+}
+
+.user-login-form p {
+  text-align:left;
+  color: #800080;
+  margin-top: 20px;
+}
+
+.user-login-form fieldset {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 70%;
+}
+
+.user-login-form input.form-control:focus {
+  border-color: #800080;
+  outline: 2px solid #800080;
+  outline-width: 2px solid #800080;
+}
+
+/*--------------------------------------------------------------
+# User Account Settings
+--------------------------------------------------------------*/
+.user-account-form {
+  padding-top: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.user-account-form .form-group {
+  flex: 0 0 60%;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.user-account-form label {
+  flex-basis: 200px;
+  margin-right: 1rem;
+}
+
+.user-account-form .form-control {
+  flex: 1;
+  width: 60%;
+  height: 40px;
+}
+
+.btn-account-custom {
+  display: inline-block;
+  padding: 2px 6px;
+  margin-top: 2rem;
+  background-color: #800080;
+  color: #ffffff;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  font-size: 14px;
+}
+
+/* Hover effect */
+.btn-account-custom:hover {
+  background-color: #999999;
+}
+
+/*--------------------------------------------------------------
+# User Account Change Password
+--------------------------------------------------------------*/
+.user-changepassword-form {
+  padding-top: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.user-changepassword-form .form-group {
+  flex: 0 0 60%;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.user-changepassword-form label {
+  flex-basis: 200px;
+  margin-right: 1rem;
+}
+
+.user-changepassword-form .form-control {
+  flex: 1;
+  width: 60%;
+  height: 40px;
+}
+
+.btn-changepassword-custom {
+  display: inline-block;
+  padding: 2px 6px;
+  margin-top: 2rem;
+  background-color: #800080;
+  color: #ffffff;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  font-size: 14px;
+}
+
+/* Hover effect */
+.btn-changepassword-custom:hover {
+  background-color: #999999;
+}
+
+/*--------------------------------------------------------------
+# My Activity section
+--------------------------------------------------------------*/
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.form-control {
+  width: 100%;
+  max-width: 250px;
+}
+
+.form-row .form-group {
+  flex: 0 0 50%;
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.form-row .form-group label {
+  margin-right: 1rem;
+  flex-basis: 100px;
+}
+
+.form-row .form-group .form-control {
+  flex: 1;
+  width: 100%;
+}
+
+#sleep_quality_label {
+  padding-left: 4px;
+  color: #800080;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+@media (max-width: 576px) {
+  .form-row .form-group {
+    flex: 0 0 100%;    /* On smaller screens, each column takes 100% width */
+  }
+}
+
+/*--------------------------------------------------------------
+# My Progress Section
+--------------------------------------------------------------*/
+.personal-info {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.personal-info .form-group {
+  flex: 0 0 60%;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.personal-info-data {
+  flex-basis: 200px;
+  margin-right: 0rem;
+  background-color: #800080;
+  color: #ffffff;
+}
+
+.personal-info .form-control {
+  flex: 1;
+  height: 38px;
+  margin-right: 5rem;
+}
+
+.recent-info {
+  margin-left: 20px;
+  margin-right: 40px;
+}
+
+.recent-info .recent-info-data {
+  width: 242px;
+  height: 38px;
+  font-size: 13px;
+  align-items: center;
+  vertical-align: middle;
+}
+
+.recent-info .form-control {
+  width: 130px;
+  height: 38px;
+  font-size: 14px;
+  margin-right: 50px;
+}
+
+.form-control.water-intake-success {
+  background-color: #28a745;
+  color: #fff
+}
+
+.form-control.water-intake-danger {
+  background-color: #dc3545;
+  color: #fff
+}
+
+.form-control.weight-success {
+  background-color: #28a745;
+  color: #fff
+}
+
+.form-control.weight-danger {
+  background-color: #dc3545;
+  color: #fff
+}
+
+.form-control.weight-warning {
+  background-color: #ffc107;
+  color: #fff
+}
+
+.title-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 1px;
+  margin-bottom: 3px;
+  background-color: #D8BFD8;
+  color: #800080;
+}
+
+.progress-icon {
+  color: #800080;
+  margin-right: 3px;
+}
+
+.plot-title,
+.line-chart-icon {
+  color: #800080;
+}
+
+.table td {
+  text-align: center;
+}
+
+/*--------------------------------------------------------------
+# Contact section
+--------------------------------------------------------------*/
+.contact-form-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+#image-container {
+  flex: 1;
+  max-width: 50%;
+  margin-right: 20px; /* Adds some spacing between the image and form */
+}
+
+#image-container img {
+  width: 100%; 
+  height: 100%;
+  object-fit: cover;
+}
+
+.contact-form-container {
+  flex: 1;
+  max-width: 50%;
+  height: 100%;
+}
+
+.contact-fieldset {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+}
+
+#contact-legend {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px 10px;
+  background-color: #D8BFD8;
+  color: #800080;
+  border-radius: 5px;
+  text-transform: uppercase;
+}
+
+.contactFormRow {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+.form-group {
+  flex: 1;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+h2 {
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+
+fieldset {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+}
+legend {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px 10px;
+  background-color: #D8BFD8;
+  color: #800080;
+  border-radius: 5px;
+}
+
+/*--------------------------------------------------------------
+# Video banner section
+--------------------------------------------------------------*/
+.video-banner {
+  position: relative;
+  height: 400px;
+  margin-top: 130px;
+}
+
+.video-banner video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.video-banner .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.video-banner .banner-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #800080;
+}
+
+.video-banner .banner-content h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.video-banner .banner-content p {
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.video-banner .buttons .btn {
+  display: inline-block;
+  padding: 10px 20px;
+  margin-right: 10px;
+  background-color: #fff;
+  color: #800080;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.video-banner .buttons .btn:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  .video-banner {
+    height: 300px;
+    margin-top: 120px;
+  }
+
+  .video-banner .banner-content h1 {
+    font-size: 24px;
+    line-height: 1.2;
+  }
+
+  .video-banner .banner-content p {
+    font-size: 16px;
+  }
+
+  .video-banner .buttons .btn {
+    padding: 8px 16px;
+    margin-bottom: 10px;
+  }
+}
+
+/*--------------------------------------------------------------
+# Workout product card section
+--------------------------------------------------------------*/
+.workoutsContainer {
+  padding-top: 40px;
+}
+
+.workoutsContainer h1 {
+  font-size: 24px;
+}
+
+.workoutsContainer p {
+  font-size: 16px;
+}
+
+/* Adjust the container for smaller screens */
+@media (max-width: 768px) {
+  .workoutsContainer {
+    padding-top: 40px;
+  }
+
+  .workoutsContainer h1 {
+    font-size: 20px;
+  }
+
+  .workoutsContainer p {
+    font-size: 14px;
+  }
+}
+
+#productCardsRow {
+  width: 100%;
+}
+
+.product-cards {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+  justify-content: center;
+
+}
+
+.product-card {
+  background-color: #f8f8f8;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-sizing: border-box;
+  text-align: center;
+  width: 258.5px;
+  height: 252.17px;
+  flex-basis: calc(25% - 30px); /* Adjust the flex-basis property for responsiveness */
+  max-width: 25%;
+  padding: 0 15px;
+  margin-bottom: 30px;
+}
+
+.product-card.hidden {
+  display: none;
+}
+
+.product-card img.img-fluid {
+  width: 196.5px;
+  height: 151px;
+  object-fit: cover;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.product-card h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.product-card p {
+  font-size: 14px;
+  color: #666;
+}
+
+.product-categories {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+  /* margin-right: 20px; */
+}
+
+/* Adjust the product card size for smaller screens */
+@media (max-width: 768px) {
+  .product-card {
+    flex-basis: calc(50% - 30px);
+    max-width: 50%;
+  }
+}
+
+/*--------------------------------------------------------------
+# Product category buttons section
+--------------------------------------------------------------*/
+.category-btn {
+  color: #551054;
+  text-transform: uppercase;
+  background: #E6E6FA;
+  padding: 8px 10px;
+  border: none;
+  border-radius: 4px;
+  flex: 1;
+  text-decoration: none;
+  max-width: 100px;
+  font-size: 12px;
+  text-align: center;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.category-btn.active {
+  background: #800080;
+  color: #ffffff;
+}
+
+.category-btn:hover {
+  background-color: grey;
+  color: #ffffff;
+}
+
+.product-categories .category-btn:first-child {
+  margin-left: 0px;
+}
+
+/* Adjust the button size and spacing for smaller screens */
+@media (max-width: 768px) {
+  .product-categories {
+    justify-content: center;
+    margin-right: 0;
+  }
+
+  .category-btn {
+    flex-basis: 80px;
+  }
+}
+
+/*--------------------------------------------------------------
+# Articles section
+--------------------------------------------------------------*/
+.total-articles {
+  font-weight: bold;
+  color: #800080;
+}
+
+.articlesContainer {
+  padding-top: 40px;
+}
+
+.card-category {
+  font-size: 14px;
+  font-weight: bold;
+  color: #555;
+  text-align: center;
+  width: 182px;
+  height: 31px;
+}
+
+.card-highlight {
+  background-color: #E6E6FA;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.card-article-title {
+  font-weight: bold;
+  color: #800080;
+}
+
+.articles-btn {
+  color: #ffffff;
+  font-weight: bold;
+  text-transform: uppercase;
+  background: #800080;
+  padding: 8px 12px;
+  font-size: 12px;
+  border: none;
+  border-radius: 4px;
+}
+
+.articles-btn:hover {
+  background: #999999;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.page-item.active .page-link {
+  background-color: #800080;
+  color: #E6E6FA;
+}
+
+.page-item .page-link {
+  color: grey;
+}
+
+.page-item.disabled .page-link {
+  color: grey;
+}
+
+/*--------------------------------------------------------------
+# Footer section
+--------------------------------------------------------------*/
+.footer-info {
+  position: relative;
+  width: 100%;
+  height: auto;
+  background-color: #800080;
+  color: #FFFFFF;
+  text-align: center;
+}
+
+.footer-info p {
+  margin-bottom: 10px;
+  color: #FFFFFF;
+}
+
+.footer-info .social-links-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* Add media query for small screens */
+@media (max-width: 768px) {
+  .footer-info .social-links-wrapper {
+    flex-direction: column;
+  }
+}

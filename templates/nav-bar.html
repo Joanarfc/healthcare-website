@@ -1,0 +1,38 @@
+<ul class="navbar-nav">
+    <li class="nav-item">
+        <a class="nav-link home" href="{{ url_for('index') }}">Home</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="{{ url_for('workouts') }}">Workouts</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="{{ url_for('articles') }}">Articles</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="{{ url_for('contact') }}">Contacts</a>
+    </li>
+</ul>
+
+<ul class="navbar-nav user-icon-dropdown">
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle person-icon" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="fas fa-user-circle fa-lg"></i>
+        </a>
+        {% if session.user_id %}
+            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown" id="userDropdownMenu">
+                <a class="dropdown-item" href="{{ url_for('account') }}">Account</a>
+                <a class="dropdown-item" href="{{ url_for('activity') }}">Add Activity</a>
+                <a class="dropdown-item" href="{{ url_for('stats') }}">My Progress</a>
+                <a class="dropdown-item" href="{{ url_for('logout') }}">Log Out</a>
+            </div>
+            <div>
+                <span class="nav-greeting">Hello, {{ session.user_username }}!</span>
+            </div>
+        {% else %}
+            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown" id="userDropdownMenu">
+                <a class="dropdown-item" href="{{ url_for('register') }}">Register</a>
+                <a class="dropdown-item" href="{{ url_for('login') }}">Log In</a>
+            </div>
+        {% endif %}
+    </li>
+</ul>

@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Account Settings
+{% endblock %}
+
+{% block content %}
+    <div class="container user-account-form">
+        <fieldset>
+            <legend>Account Settings</legend>
+            <div class="d-flex flex-wrap">
+                <div class="mb-3">
+                    <label for="username" class="form-label">Username</label>
+                    <input type="text" class="form-control" id="username" name="username" value="{{ user.username }}" disabled>
+                </div>
+                <div class="mb-3">
+                    <label for="current_password" class="form-label">Current Password</label>
+                    <input type="password" class="form-control" id="current_password" name="current_password" value="********" disabled>
+                    <a href="{{ url_for('change_password') }}" class="btn btn-account-custom">Change password</a>
+                </div>
+        </fieldset>
+    </div>
+{% endblock %}

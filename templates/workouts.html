@@ -1,0 +1,73 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Workouts
+{% endblock %}
+    
+{% block content %}
+    <div class="container workoutsContainer">
+        <h1>Workouts</h1>
+        <p>Explore our workout plans and achieve your fitness goals.</p>
+
+        <section class="product-categories">
+            <a class="category-btn active" href="{{ url_for('workouts', category='all') }}" data-category="all">All</a>
+            {% for category in categories %}
+                <a class="category-btn {% if request.args.get('category') == category %}active{% endif %}" href="{{ url_for('workouts', category=category) }}" data-category="{{ category }}">{{ category }}</a>
+            {% endfor %}
+        </section>
+        <br>
+        {% if total_workouts > 0 %}
+            <div class="total-articles">Total workouts: {{ total_workouts }}</div>
+            <section class="product-cards">
+                <div class="row" id="productCardsRow">
+                    {% for workout in workout_data %}
+                        <div class="product-card" data-category="{{ workout['category'].lower() }}">
+                            <img src="{{ url_for('static', filename=workout['image_path']) }}" alt="{{ workout['name'] }}" class="img-fluid">
+                            <h3>{{ workout['name'] }}</h3>
+                            <p>{{ workout['description'] }}</p>
+                        </div>
+                    {% endfor %}
+                </div>
+            </section>
+
+            <!-- Pagination links -->
+            <nav aria-label="...">
+                <ul class="pagination justify-content-center">
+                    {% if pagination > 1 %}
+                        <li class="page-item">
+                            <a class="page-link" href="{{ url_for('workouts', category=request.args.get('category'), page=pagination - 1) }}">Previous</a>
+                        </li>
+                    {% else %}
+                        <li class="page-item disabled">
+                            <span class="page-link">Previous</span>
+                        </li>
+                    {% endif %}
+            
+                    {% for page_num in range(1, total_pages + 1) %}
+                        {% if pagination == page_num %}
+                            <li class="page-item active">
+                                <span class="page-link">{{ page_num }} <span class="sr-only">(current)</span></span>
+                            </li>
+                        {% else %}
+                            <li class="page-item">
+                                <a class="page-link" href="{{ url_for('workouts', category=request.args.get('category'), page=page_num) }}">{{ page_num }}</a>
+                            </li>
+                        {% endif %}
+                    {% endfor %}
+            
+                    {% if pagination < total_pages %}
+                        <li class="page-item">
+                            <a class="page-link" href="{{ url_for('workouts', category=request.args.get('category'), page=pagination + 1) }}">Next</a>
+                        </li>
+                    {% else %}
+                        <li class="page-item disabled">
+                            <span class="page-link">Next</span>
+                        </li>
+                    {% endif %}
+                </ul>
+            </nav>
+        {% else %}
+        <p>No workouts available.</p>
+        {% endif %}
+    </div>
+{% endblock %}
