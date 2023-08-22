@@ -25,3 +25,6 @@ In this website can have access to workouts and fitness and health articles. If 
 
 ### CONTACT PAGE
 <img alt="Healthcare Home page" style="max-width: 100%;" src="https://github.com/Joanarfc/healthcare-website/assets/36134456/2f551efc-58f3-43d9-9d09-9edfb785e89f">
+
+### MY PROGRESS Page
+<img alt="Healthcare Home page" style="max-width: 100%;" src="https://github.com/Joanarfc/healthcare-website/assets/36134456/497f68dc-808a-4abd-9e42-1497eb385184">
